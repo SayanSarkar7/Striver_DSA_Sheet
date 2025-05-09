@@ -1,6 +1,8 @@
 /**
  * @param {number[]} nums
  * @return {number}
+ * 
+ * T.c -> O(n)
  */
 var maxSubArray = function(nums) {
     const n=nums.length;
