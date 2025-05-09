@@ -1,6 +1,8 @@
 /**
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
+ * 
+ *  T.c -> O(n)
  */
 var nextPermutation = function(nums) {
     const n=nums.length;
