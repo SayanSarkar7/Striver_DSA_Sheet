@@ -25,20 +25,42 @@
 //   });
 // });
 
+// -------- Number Hashing -----------------
+
 const arr = [1, 3, 2, 1, 3];
 const queryArr = [5, 9, 1, 4, 2, 7, 3, 2];
 
 // preCompute
-const hash = new Array(Math.max(...queryArr)+1).fill(0);
+const hash = new Array(Math.max(...queryArr) + 1).fill(0);
 
 for (let i = arr.length; i >= 0; i--) {
   hash[arr[i]] += 1;
 }
 
 // fetch
-for(let i=0;i<queryArr.length;i++){
-    console.log(`${queryArr[i]} appeared ${hash[queryArr[i]]} times\n`);
-    
+for (let i = 0; i < queryArr.length; i++) {
+  console.log(`${queryArr[i]} appeared ${hash[queryArr[i]]} times\n`);
 }
 
 // console.log(arr);
+
+// -------- String Hashing -----------------
+
+const str = "abcdrrrsp";
+const queryStr = "aabbcccdrsplv";
+
+const hashStr = new Array(26).fill(0);
+
+// preCompute
+for (let i = 0; i < str.length; i++) {
+  hashStr[str.charCodeAt(i) - 'a'.charCodeAt(0)] += 1;
+}
+
+// fetch
+
+for(let i=0;i<queryStr.length;i++){
+    console.log(`${queryStr[i]} ---> ${hashStr[queryStr.charCodeAt(i)-'a'.charCodeAt(0)]} times`)
+}
+
+
+
