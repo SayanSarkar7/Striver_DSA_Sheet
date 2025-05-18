@@ -55,7 +55,10 @@ class Solution {
             if(preSumMap.has(rem)){
                 maxLen=Math.max(maxLen,i-preSumMap.get(rem));
             }
-            preSumMap.set(sum,i);
+            // ✅ Only store first occurrence of sum
+            if (!preSumMap.has(sum)) {
+                preSumMap.set(sum, i);
+            }
             
             
         }
