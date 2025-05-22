@@ -35,6 +35,17 @@ class LinkedList{
         this.head=node;
         
     }
+    delete(data){
+        if(this.head===null){
+            console.log("There is no element to delete");
+            return;
+        }
+        let current=this.head;
+        while( current.next!==null && current.next.data!==data){
+            current=current.next;
+        }
+        current.next=current.next.next;
+    }
     printAll(){
         let current=this.head;
         let output='';
@@ -54,6 +65,8 @@ ll.append(30)
 ll.append('sayan')
 ll.append('anjali')
 ll.prepend('nilanjana')
+ll.printAll()
+ll.delete(30);
 ll.printAll()
 
 
