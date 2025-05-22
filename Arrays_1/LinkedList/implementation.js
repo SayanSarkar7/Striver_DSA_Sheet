@@ -24,6 +24,17 @@ class LinkedList{
         }
         current.next=node;
     }
+    prepend(data){
+        
+        const node=new Node(data);
+        if(this.head===null){
+            this.head=node;
+            return;
+        }
+        node.next=this.head;
+        this.head=node;
+        
+    }
     printAll(){
         let current=this.head;
         let output='';
@@ -42,6 +53,7 @@ ll.append(20)
 ll.append(30)
 ll.append('sayan')
 ll.append('anjali')
+ll.prepend('nilanjana')
 ll.printAll()
 
 
