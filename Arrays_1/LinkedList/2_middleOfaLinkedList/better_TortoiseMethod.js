@@ -4,7 +4,7 @@
  *     this.val = (val===undefined ? 0 : val)
  *     this.next = (next===undefined ? null : next)
  * }
- * t.c=O[n+n/2]
+ * t.c=O[n/2]
  */
 /**
  * @param {ListNode} head
@@ -15,18 +15,12 @@ var middleNode = function(head) {
     if(head===null){
         return;
     }
-    let curr=head;
-    let count=0;
-    while(curr!==null){
-        curr=curr.next;
-        count++;
+    // Tortoise method 
+    let slow=head,fast=head;
+    while( fast!==null && fast.next!==null){
+        fast=fast.next.next;
+        slow=slow.next;
     }
-    curr=head;
-    for(let i=0;i<Math.floor(count/2);i++){
-        curr=curr.next;
-    }
-    return curr;
+    return slow;
 
-
-    
 };
