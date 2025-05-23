@@ -39,21 +39,21 @@ var mergeTwoLists = function (list1, list2) {
   return head;
 };
 
-function ListNode(val, next) {
-  this.val = val === undefined ? 0 : val;
-  this.next = next === undefined ? null : next;
-}
-let list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
-let list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+// function ListNode(val, next) {
+//   this.val = val === undefined ? 0 : val;
+//   this.next = next === undefined ? null : next;
+// }
+// let list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+// let list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
 
-let result = mergeTwoLists(list1, list2);
+// let result = mergeTwoLists(list1, list2);
 
-let output = "";
-while (result != null) {
-  output += result.val + " -> ";
-  result = result.next;
-}
-output += "null";
-console.log(output);
+// let output = "";
+// while (result != null) {
+//   output += result.val + " -> ";
+//   result = result.next;
+// }
+// output += "null";
+// console.log(output);
 
 // Output: 1 → 1 → 2 → 3 → 4 → 4
